@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ex0">
+    <output-path>$PROJECT_DIR$/out/artifacts/ex0</output-path>
+    <root id="archive" name="ex0.jar">
+      <element id="file-copy" path="$PROJECT_DIR$/src/Book.java" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/Library.java" />
+      <element id="file-copy" path="$PROJECT_DIR$/src/Patron.java" />
+    </root>
+  </artifact>
+</component>
