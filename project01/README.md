@@ -1,0 +1,31 @@
+yoav
+
+
+
+
+=============================
+=      File description     =
+=============================
+Book.java - Book class, which has a title, author, year of publication and different literary aspects.
+Library.java - This class represents a library, which hold a collection of books.
+Patron.java - This class represents a patron that has a name and values of different literary aspects.
+
+
+=============================
+=          Design           =
+=============================
+Well basically the design was given to us in the JavaDocs so we didn't have to design it by ourselves.
+
+
+=============================
+=  Implementation details   =
+=============================
+I implemented the library class in a way that you have 2 arrays one for the patrons and the second one
+for the books the library hold.
+I chose to Implement it that way because in that way I can use the index of the book/patron in the array as
+the id.
+
+
+=============================
+=    Answers to questions   =
+=============================
