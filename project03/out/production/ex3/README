@@ -1,0 +1,91 @@
+yoav
+
+
+
+
+=============================
+=      File description     =
+=============================
+Storage.java -
+               This is an abstract class of storage where
+               The locker class and the Long-term storage inherit.
+Locker.java -
+              The locker class represent a locker on the USS DISCOVERY space ship with all sorts of
+              functions, it has a capacity which is changed whenever the addItem or removeItem functions
+              are invoked.
+LongTermStorage.java -
+                       This is the long term storage of the spaceship, stuff move to this storage
+                       automatically, specifically whenever any
+                       volume of some item passes the 50% volume from
+                       the maximum capacity of the locker.
+LockerTest.java -
+                    This is a test class for the locker class.
+LongTermTest.java -
+                    This is a test class for the LongTermStorage class.
+SpaceShipDepositoryTest.java -
+                               This is a test suite for all the tests of the spaceship (PART A of the
+                               exercise) task.
+BoopingSite.java -
+                   Booping.com is a new hotel booking site,
+                   that allows for personalized search methodologies.
+                   In this part of the exercise, you will implement a portion of the website’s actions.
+                   Specifically, you will provide the users with the ability to get
+                   a list of hotels based on different parameters.
+                   The hotels you are provided with are apart of a larger hotel dataset.
+BoopingSiteTest.java -
+                        This is a test class for the BoopingSite class.
+SortHotelsByProximity.java -
+                                This is a sorting class which implements the Comparator interface
+                                which will force to implement the compare() function and therefore
+                                I can simplify the BoopingSite class and use sort() function
+                                On hotel arrays.
+                                The sorting logic for the getHotelsByProximity(...)
+                                method is implemented in this very class.
+SortCityRatingComparator -
+                                This is also a sorting class.
+                                The sorting logic for the SortByCityRating(...)
+                                method is implemented in this very class.
+README - this.
+
+=============================
+=          Design           =
+=============================
+I design the Locker and LongTermStorage classes in a way they will inherit the Storage class,
+I noticed that the LongTermStorage and the Locker class has a lot of similarities, such getInventory() method,
+getCapacity() and more... It got me thinking that there might be a "Is a" relation between some super class
+and them. and well enough I figured that I should create the Storage class which will be some sort of
+general storage unit which will apply its logic to the locker class and the long-term storage.
+Also I decided to make the Storage class abstract because I realized it will make no sense of creating
+such general purposed storage.
+More about the locker class, I decided to create a static field of the Long-term unit class so
+for every locker I create I will know the state of the long-term storage, because the state of the long-term
+storage affects all the available lockers.
+regarding the LockerTest I took advantage of the course's TA confirmation to apply the protected modifier
+to the LongTerm Storage instance which is a static field of every locker (as I mentioned before), and
+That's why I could use it in the test (which is in the same package of the locker) and therefor reset
+the long-term storage before every test. (Note that it makes the test Implementation dependent).
+
+Moving along to the BoopingSite task, I decided to create a Sorting (which implement Comparator) classes for
+the required function
+In order to create the sorting logic for the "Collectin.sort()" function.
+I only needed to create two of those because it was enough to satisfy the requested functionality.
+Also one main design decision I made is for the class SortHotelsByProximity (which implements a Comparator
+Interface), in order to compare between some comparable objects I've noticed that I can design the class which
+implements the Comparator<> interface with fields, and then Override the compare(...)
+function and use the class's fields for the compare function logic.
+that design decision saved me a lot of time and redundant code.
+
+=============================
+=  Implementation details   =
+=============================
+For the locker class I used HashMap to store Items in the locker and In the long-term storage as well,
+because I needed a way to count items which, and HashTable fits perfectly for the job.
+For the BoopingSite I used ArrayList with the Hotel type in order to make an ArrayList of all the
+hotels in some city, then I converted it back to Hotel[] array.
+Also Its
+
+=============================
+=    Answers to questions   =
+=============================
+The question about the differences in the design of all the classes
+and how I chose to store information is in answered in the "Design" section above.

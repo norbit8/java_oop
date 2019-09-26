@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"dataStructures"},{"l":"dataStructures.dictionary"},{"l":"dataStructures.naive"},{"l":"dataStructures.suffixtree"},{"l":"processing.parsingRules"},{"l":"processing.searchStrategies"},{"l":"processing.textStructure"},{"l":"utils"}]

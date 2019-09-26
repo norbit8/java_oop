@@ -1,0 +1,55 @@
+yoav
+
+
+
+
+=============================
+=      File description     =
+=============================
+SpaceShip.java - The super class of all the other ships.
+                 all the different kind of ships inherits from this class.
+SpaceShipFactory.java - The space ship factory class.
+                        Given the user input before each game
+                        representing all the space ships the user wants to play with,
+                        This class will generate an array from type - "SpaceShip"
+                        with all the spaceship the user chose.
+HumanShip.java - Human controlled ship (controlled by the user).
+RunnerShip.java - A ship that tries to avoid all other ships.
+BasherShip.java - A ship that deliberately tries to collide with other ships.
+AggressiveShip.java - A ship that tries to pursue other ships and fire at them.
+DrunkardShip.java - A ship with a drunken pilot. (explanation below)
+SpecialShip.java - A ship with some interesting behavior (explanation below)
+README - this.
+
+=============================
+=          Design           =
+=============================
+I decided to create the different types of spaceships in different classes,
+where all the classes inherits from the super class SpaceShip.
+more specifically all the methods are implemented in the "SpaceShip" class,
+but each spaceship differ in the "doAction()" function where I specifically designed each
+"doAction()" function on the each spaceship class.
+Furthermore I decided to use "protected" to all the fields in the SpaceShip class
+because I wanted to keep them visible for all the space ships which inherits from SpaceShip.
+
+=============================
+=  Implementation details   =
+=============================
+I implemented the SpaceShipFactory using switch-case syntax.
+because we have 6 types of spaceships and I parse the user input using a for-each loop,
+so I figured instead of using many if conditions, I'll just use the switch-case method.
+
+another implementation detail worth noting is the implementation of the Drunkard ship and Special ship:
+    -Drunkard ship: I obtain a random number ranging from -1 to 1 (integer),
+                    this number will choose how the spaceship will turn for the rest of the game.
+                    Also I made the spaceship fire all the time so it will look like the pilot doesnt even
+                    aim at a specific target which creates the "Drunk" effect (hopefully).
+    -Special ship:  I decided to make the special ship undefeatable, which means that it has "god mode"
+                    and full energy all the time.
+                    also the ship does'nt move which make it like a turret.
+
+=============================
+=    Answers to questions   =
+=============================
+I answered all the questions about the implementation of the drunkard ship and the special
+one in the Implementation details section above.

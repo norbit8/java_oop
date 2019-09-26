@@ -1,0 +1,68 @@
+yoav
+
+
+
+
+=============================
+=      File description     =
+=============================
+SimpleHashSet.java - an abstract class implementing SimpleSet. You may expand its API if you wish, keeping
+                     in mind the minimal API principal.
+                     You may implement methods fromSimpleSet or keep them abstract as you see fit
+OpenHashSet.java - A hash-set based on chaining.
+ClosedHashSet.java - A hash-set based on closed-hashing with quadratic probing.
+                     Extends SimpleHashSet.
+SpecialString.java - Special class representing a String with another feature
+                     which is a parameter which omits true if the string should be
+                     considered as deleted, false otherwise.
+WrapperLinkedList.java -  Wrapper-class that has a LinkedList<String>
+                          and delegates methods to it
+CollectionFacadeSet.java - Facade design pattern implementation for the set collection.
+                           facade provides a simplified interface to a more complex class or even a set of
+                           classes.
+SimpleSetPerformanceAnalyzer.java - This class measures the run-times of the data structures:
+                                      * OpenHashSet.
+                                      * ClosedHashSet.
+                                      * TreeSet (Java's vanilla implementation).
+                                      * LinkedList (Java's vanilla implementation).
+                                      * HashSet (Java's vanilla implementation).
+RESULTS.txt - The file which collects all the performance analyzing results.
+README - this.
+
+=============================
+=          Design           =
+=============================
+In this exercise we used the Design patter of Facade,
+
+
+=============================
+=  Implementation details   =
+=============================
+How I implemented OpenHashSet and ClosedHashSet:
+I implemented the OpenHashSet using the class WrapperLinkedList which is a class that includes a LinkedList
+of strings delegated in it, and there-for I could create an Array of this Object.
+In the class WrapperLinkedList I delegated just the methods I needed to use In the Implementation of the
+OpenHashSet, such as: push, pop, remove, isEmpty, and Contains.
+In contrast to the OpenHashSet in the ClosedHashSet I used an array of SpecialString, which is just a String
+with a state "deleted" which helps me determine whether the string is in a deleted state or is it available
+in the hash-set.
+Because There is common ancestor class to the OpenHashSet and ClosedHashSet I decided to Implement some of
+their functions in the ancestor class (SimpleHashSet) such as: CheckFactorAdd(), and CheckFactorDelete()
+both functions verify if we're not exceeding the LowerLoadFactor and the UpperLoadFactor.
+
+How I implemented the deletion mechanism in the ClosedHashSet:
+Because I created the class SpecialString the way I created it, I had a field which states if the string
+is deleted or not, and a getter function to probe the state of the field.
+That way every time I needed to add a new string to the hash-table I could differ between a deleted place and
+a used one.
+
+=============================
+=    Answers to questions   =
+=============================
+Answered the questions about the Implementation of the hash-sets in the Implementation details section.
+The Result of the analysis discussion:
+-
+-
+-
+-
+-
